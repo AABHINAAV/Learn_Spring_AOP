@@ -16,6 +16,11 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public void makePayment_around(int amount)
-    {}
+    public void makePayment_around(int amount) {
+        System.out.println("amount debited : " + amount);
+        //
+        //
+        //
+        System.out.println("amount credited: " + amount);
+    }
 }

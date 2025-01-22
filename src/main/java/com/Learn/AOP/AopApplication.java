@@ -15,8 +15,5 @@ import javax.swing.*;
 public class AopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AopApplication.class);
-//		ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
-//		PaymentServiceImpl paymentService = context.getBean(PaymentServiceImpl.class);
-//		paymentService.makePayment(123);
 	}
 }

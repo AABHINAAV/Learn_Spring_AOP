@@ -18,7 +18,7 @@ public class Controller {
     }
 
     @GetMapping("/around")
-    public void aspect_aroung() {
+    public void aspect_around() {
         this.paymentService.makePayment_around(123);
     }
 }
