@@ -2,10 +2,7 @@ package com.Learn.AOP.aspect;
 
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,6 +30,25 @@ public class MyAspect {
         //
         //
         System.out.println("AROUND : payment finished ...");
+
+        return result;
+    }
+
+    //
+    //
+    //
+    @Pointcut("execution(* com.Learn.AOP.service.impl.PaymentServiceImpl.makePayment_named_pointcut(..))") // the pointcut expression
+    private void customNamedPointCutExpression() {}
+
+    @Around("customNamedPointCutExpression()")
+    public Object printAround2(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("AROUND : NAMED POINT CUT : payment started ...");
+        //
+        // calling logic method
+        Object result = joinPoint.proceed();
+        //
+        //
+        System.out.println("AROUND : NAMED POINT CUT : payment finished ...");
 
         return result;
     }

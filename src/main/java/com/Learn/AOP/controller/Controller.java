@@ -21,4 +21,9 @@ public class Controller {
     public void aspect_around() {
         this.paymentService.makePayment_around(123);
     }
+
+    @GetMapping("/named_pointcut_expression")
+    public void named_pointcut_expression() {
+        this.paymentService.makePayment_named_pointcut(123);
+    }
 }

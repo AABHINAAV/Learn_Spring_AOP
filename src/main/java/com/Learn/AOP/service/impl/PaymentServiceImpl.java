@@ -23,4 +23,13 @@ public class PaymentServiceImpl implements PaymentService {
         //
         System.out.println("amount credited: " + amount);
     }
+
+    @Override
+    public void makePayment_named_pointcut(int amount) {
+        System.out.println("amount debited : " + amount);
+        //
+        //
+        //
+        System.out.println("amount credited: " + amount);
+    }
 }
